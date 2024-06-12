@@ -1,7 +1,7 @@
 package br.com.chr3web.assistant.security.filters;
 
-import br.com.chr3web.assistant.security.util.JwtUtil;
-import br.com.chr3web.assistant.security.service.UserDetailsServiceImpl;
+import br.com.chr3web.assistant.security.service.JwtUtil;
+import br.com.chr3web.assistant.security.service.CustomUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -20,7 +20,7 @@ import java.io.IOException;
 public class JwtRequestFilter extends OncePerRequestFilter {
 
     @Autowired
-    private UserDetailsServiceImpl userDetailsService;
+    private CustomUserDetailsService userDetailsService;
 
     @Autowired
     private JwtUtil jwtUtil;

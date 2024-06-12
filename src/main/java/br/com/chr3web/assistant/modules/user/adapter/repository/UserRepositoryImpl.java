@@ -28,7 +28,7 @@ public class UserRepositoryImpl implements UserRepository {
     }
 
     @Override
-    public User updateSave(User user) {
+    public User updateUser(User user) {
         UserEntity userEntity = UserMapper.toEntity(user);
         if (jpaUserRepository.existsById(userEntity.getId())) {
             return UserMapper.toDomain(jpaUserRepository.save(userEntity));

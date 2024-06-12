@@ -1,4 +1,4 @@
-package br.com.chr3web.assistant.security.util;
+package br.com.chr3web.assistant.security.service;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

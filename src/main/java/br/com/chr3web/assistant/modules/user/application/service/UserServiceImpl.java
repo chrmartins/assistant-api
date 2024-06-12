@@ -26,6 +26,14 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User updateUser(User user) {
-        return userRepository.updateSave(user);
+        Optional<User> existingUser = userRepository.findByEmail(user.getEmail());
+        if (existingUser.isPresent()) {
+            User updatedUser = existingUser.get();
+            updatedUser.setName(user.getName());
+            updatedUser.setPassword(user.getPassword());
+            return userRepository.save(updatedUser);
+        } else {
+            throw new RuntimeException("Usuário não encontrado.");
+        }
     }
 }

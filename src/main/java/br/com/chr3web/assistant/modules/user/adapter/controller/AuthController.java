@@ -2,7 +2,7 @@ package br.com.chr3web.assistant.security.controller;
 
 import br.com.chr3web.assistant.modules.user.adapter.entities.UserEntity;
 import br.com.chr3web.assistant.modules.user.adapter.repository.JpaUserRepository;
-import br.com.chr3web.assistant.security.util.JwtUtil;
+import br.com.chr3web.assistant.security.service.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
